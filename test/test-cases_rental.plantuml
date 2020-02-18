@@ -1,0 +1,12 @@
+@startuml RentalContractStateTest
+skinparam Monochrome true
+skinparam Shadowing false
+
+' Testfall 1
+"start" --> [init] "created"
+--> [pay] "ongoing"
+--> [check] "created'"
+
+' Testfall 2
+"created" --> [exit] "end"
+@enduml

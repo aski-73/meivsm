@@ -1,0 +1,22 @@
+@startuml CrowdFundingContractStateTest
+skinparam Monochrome true
+skinparam Shadowing false
+
+' Testfall 1: init pay*'msg.value < goal' pay*'msg.value < goal'
+"start" --> [init] "created"
+--> [pay*] "funding"
+--> [pay*] "funding'"
+' Testfall 2: init pay*'now <= endDate & msg.value >= goal'
+"created" --> [pay*]"successful"
+--> [exit] "end"
+' Testfall 3: init pay*'now > endDate'
+"created" --> [pay* 'now > endDate']"failed"
+--> [exit] "end"
+' Testfall 4: init pay*'now <= endDate & msg.value < goal' pay*'now <= endDate & msg.value >= goal', exit
+"funding" --> [pay*] "successful'"
+"successful'" --> [exit] "end'" 
+' Testfall 5: init pay* pay*'now > endDate'
+"funding" --> [pay* 'now > endDate'] "failed'" 
+"failed'" --> [exit] "end'" 
+
+@enduml

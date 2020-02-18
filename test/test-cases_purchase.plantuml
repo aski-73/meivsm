@@ -1,0 +1,15 @@
+@startuml PurchaseContractBehaviorTest
+skinparam Monochrome true
+skinparam Shadowing false
+
+' Testfall 1: init, pay, accept, exit
+"start" --> [init] "offering"
+--> [pay] "checking"
+--> [accept] "sold"
+--> [exit] "end"
+
+' Testfall 2: init, pay, decline, reinsert
+"checking" --> [decline] "declined"
+--> [reinsert] "offering'"
+
+@enduml

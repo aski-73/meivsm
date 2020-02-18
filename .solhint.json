@@ -1,0 +1,13 @@
+{
+  "extends": "solhint:default",
+  "plugins": [],
+  "rules": {
+    "avoid-throw": false,
+    "avoid-suicide": "error",
+    "avoid-sha3": "warn",
+    "security": {
+      "no-block-members": false
+    },
+    "no-unsued-variables": false
+  }
+}

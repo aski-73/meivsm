@@ -1,0 +1,13 @@
+@startuml TripInsurance
+skinparam Monochrome true
+
+' Testfall 1: init pay pay report
+"start" --> [init] "created"
+--> [pay] "stageOne"
+--> [pay] "stageTwo"
+--> [report] "damage"
+--> [exit] "ende"
+' Testfall 2: init pay pay check
+"stageTwo" --> [check] "noproblems"
+--> [exit] "ende"
+@enduml
